@@ -56,6 +56,40 @@
           ".validate": "false"
         }
       }
+    },
+    
+    // Spots have a user ID, an address, a geohash, a title, a rating, a rating counter, a price rate, and a flag denoting if it's reserved
+    "spots": {
+      "$spots": {
+        ".validate": "newData.hasChildren(['userId', 'addr', 'geohash', 'title', 'rating', 'numRatings', 'costPerHour', 'isReserved'])",
+        "userId": {
+          ".validate": "true"
+        },
+        "addr": {
+          ".validate": "true"
+        },
+        "geohash": {
+          ".validate": "true"
+        },
+        "title": {
+          ".validate": "true"
+        },
+        "rating": {
+          ".validate": "true"
+        },
+        "numRatings": {
+          ".validate": "true"
+        },
+        "costPerHour": {
+          ".validate": "true"
+        },
+        "isReserved": {
+          ".validate": "true"
+        },
+        "$other": {
+          ".validate": "false"
+        }
+      }
     }
   }
 }
