@@ -7,10 +7,15 @@
     // Make sure that users have an email field and that an email is a string that matches this regex provided by Firebase
     "users": {
       "$users": {
-        ".validate": "newData.hasChildren(['email'])",
         "email": {
           ".validate": "newData.isString() &&
                         newData.val().matches(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}$/i)"
+        },
+        "activeHostReservations": {
+            ".validate": "true"
+        },
+        "activeDriverReservations": {
+            ".validate": "true"
         },
         "$other": {
           ".validate": "false"
@@ -21,7 +26,7 @@
     // Reservations have a driver, host, and spot ID, a start and end time, a latitude, a longitude, and a geohash
     "reservations": {
       "$reservations": {
-        ".validate": "newData.hasChildren(['driverId', 'hostId', 'spotId', 'status', 'latitude', 'longitude', 'geohash'])",
+        ".validate": "newData.hasChildren(['driverId', 'hostId', 'spotId', 'status', 'latitude', 'longitude', 'geohash', 'timeRequested'])",
         "driverId": {
           ".validate": "true"
         },
@@ -32,6 +37,9 @@
           ".validate": "true"
         },
         "status": {
+          ".validate": "true"
+        },
+        "timeRequested": {
           ".validate": "true"
         },
         "timeStart": {
