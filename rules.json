@@ -13,7 +13,44 @@
                         newData.val().matches(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}$/i)"
         },
         "password": {
-          ".validate": "newData.isString"
+          ".validate": "true"
+        },
+        "$other": {
+          ".validate": "false"
+        }
+      }
+    },
+    
+    // Reservations have a driver, host, and spot ID, a start and end time, a latitude, a longitude, and a geohash
+    "reservations": {
+      "$reservations": {
+        ".validate": "newData.hasChildren(['driverId', 'hostId', 'spotId', 'status', 'timeStart', 'timeEnd', 'latitude', 'longitude', 'geohash'])",
+        "driverId": {
+          ".validate": "true"
+        },
+        "hostId": {
+          ".validate": "true"
+        },
+        "spotId": {
+          ".validate": "true"
+        },
+        "status": {
+          ".validate": "true"
+        },
+        "timeStart": {
+          ".validate": "true"
+        },
+        "timeEnd": {
+          ".validate": "true"
+        },
+        "latitude": {
+          ".validate": "true"
+        },
+        "longitude": {
+          ".validate": "true"
+        },
+        "geohash": {
+          ".validate": "true"
         },
         "$other": {
           ".validate": "false"
