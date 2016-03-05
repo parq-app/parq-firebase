@@ -7,13 +7,10 @@
     // Make sure that users have an email field and that an email is a string that matches this regex provided by Firebase
     "users": {
       "$users": {
-        ".validate": "newData.hasChildren(['email', 'password'])",
+        ".validate": "newData.hasChildren(['email'])",
         "email": {
           ".validate": "newData.isString() &&
                         newData.val().matches(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}$/i)"
-        },
-        "password": {
-          ".validate": "true"
         },
         "$other": {
           ".validate": "false"
