@@ -91,6 +91,9 @@
         "isReserved": {
           ".validate": "true"
         },
+        "reservationId": {
+          ".validate": "true"
+        },
         "$other": {
           ".validate": "false"
         }
