@@ -17,6 +17,9 @@
         "activeDriverReservations": {
             ".validate": "true"
         },
+        "spots": {
+            ".validate": "true"
+        },
         "$other": {
           ".validate": "false"
         }
