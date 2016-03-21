@@ -20,6 +20,12 @@
         "spots": {
             ".validate": "true"
         },
+        "firstName": {
+            ".validate": "true"
+        },
+        "lastName": {
+            ".validate": "true"
+        },
         "$other": {
           ".validate": "false"
         }
