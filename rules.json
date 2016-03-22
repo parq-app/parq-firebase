@@ -35,7 +35,7 @@
     // Reservations have a driver, host, and spot ID, a start and end time, a latitude, a longitude, and a geohash
     "reservations": {
       "$reservations": {
-        ".validate": "newData.hasChildren(['driverId', 'hostId', 'spotId', 'status', 'latitude', 'longitude', 'geohash', 'timeRequested'])",
+        ".validate": "newData.hasChildren(['driverId', 'timeRequested'])",
         "driverId": {
           ".validate": "true"
         },
@@ -101,6 +101,9 @@
           ".validate": "true"
         },
         "reservationId": {
+          ".validate": "true"
+        },
+        "reviews": {
           ".validate": "true"
         },
         "$other": {
